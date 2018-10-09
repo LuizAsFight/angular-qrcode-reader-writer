@@ -1,16 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 import { AppComponent } from './app.component';
+import { AppReaderComponent } from './reader/reader.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppReaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgxQRCodeModule,
+    CommonModule,
+    ZXingScannerModule.forRoot()
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
